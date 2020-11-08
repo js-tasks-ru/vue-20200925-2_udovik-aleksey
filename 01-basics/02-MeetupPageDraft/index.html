@@ -15,7 +15,7 @@
     }
   </style>
 
-<div id="app" v-cloak>
+<div id="app" v-cloak v-if="meetup !== null">
   <div>
     <div class="meetup-cover" :style="meetup.image ? {'--bg-url': `url('${meetup.image}')`} : ''">
       <h1 class="meetup-cover__title">{{ meetup.title }}</h1>
@@ -60,7 +60,7 @@
             </li>
             <li>
               <img class="icon info-list__icon" alt="icon" src="/assets/icons/icon-cal-lg.svg" />
-              <time datetime="2020-02-31">{{ meetup.localeDate }}</time>
+              <time :datetime="meetup.date">{{ meetup.localeDate }}</time>
             </li>
           </ul>
         </div>
